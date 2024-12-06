@@ -4,7 +4,6 @@ using ProyectoFinal.Data.ViewModel;
 
 namespace ProyectoFinal.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class AlumnoController : ControllerBase
@@ -15,11 +14,12 @@ namespace ProyectoFinal.Controllers
         {
             _alumnoService = alumnoService;
         }
+
         [HttpGet("get-all-alumnos")]
-        public IActionResult GetAllAlumno()
+        public IActionResult GetAllAns()
         {
-            var allalumno = _alumnoService.GetAllAns();
-            return Ok(allalumno);
+            var allAlumnos = _alumnoService.GetAllSimpleAlumnos();
+            return Ok(allAlumnos);
         }
 
         [HttpGet("get-alumnos-by-id/{id}")]
@@ -33,7 +33,7 @@ namespace ProyectoFinal.Controllers
             return Ok(alumno);
         }
 
-        [HttpPost("add-alumno-whit-class")]
+        [HttpPost("add-alumno-with-class")]
         public IActionResult AddAlumno([FromBody] AlumnoVM alumno)
         {
             _alumnoService.AddAlumnoWithClass(alumno);
@@ -46,6 +46,7 @@ namespace ProyectoFinal.Controllers
             var updateAlumno = _alumnoService.UpdateAlumnoByID(id, alumno);
             return Ok(updateAlumno);
         }
+
         [HttpDelete("delete-alumno-by-id/{id}")]
         public IActionResult DeleteAlumnoById(int id)
         {
@@ -54,3 +55,6 @@ namespace ProyectoFinal.Controllers
         }
     }
 }
+
+
+

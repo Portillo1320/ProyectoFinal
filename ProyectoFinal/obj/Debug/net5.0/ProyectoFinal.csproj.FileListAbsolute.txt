@@ -128,3 +128,4 @@ C:\Users\airam\OneDrive\Escritorio\4CUATRI\ProyectoFinal\ProyectoFinal\obj\Debug
 C:\Users\airam\OneDrive\Escritorio\4CUATRI\ProyectoFinal\ProyectoFinal\obj\Debug\net5.0\ProyectoFinal.pdb
 C:\Users\airam\OneDrive\Escritorio\4CUATRI\ProyectoFinal\ProyectoFinal\obj\Debug\net5.0\ProyectoFinal.genruntimeconfig.cache
 C:\Users\airam\OneDrive\Escritorio\4CUATRI\ProyectoFinal\ProyectoFinal\obj\Debug\net5.0\ref\ProyectoFinal.dll
+C:\Users\airam\OneDrive\Escritorio\4CUATRI\ProyectoFinal\ProyectoFinal\obj\Debug\net5.0\ProyectoFinal.sourcelink.json

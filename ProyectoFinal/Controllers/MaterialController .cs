@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProyectoFinal.Data.Services;
 using ProyectoFinal.Data.ViewModel;
-
 
 namespace ProyectoFinal.Controllers
 {
@@ -16,11 +14,19 @@ namespace ProyectoFinal.Controllers
         {
             _materialService = materialService;
         }
+
         [HttpPost("add-material")]
         public IActionResult AddMaterial([FromBody] MaterialVM material)
         {
             _materialService.AddMaterial(material);
             return Ok();
+        }
+
+        [HttpGet("get-all-material")]
+        public IActionResult GetAllAns()
+        {
+            var allMaterial = _materialService.GetAllAns();
+            return Ok(allMaterial);
         }
 
         [HttpGet("get-material-with-alumno-by-id/{id}")]
@@ -45,3 +51,4 @@ namespace ProyectoFinal.Controllers
         }
     }
 }
+

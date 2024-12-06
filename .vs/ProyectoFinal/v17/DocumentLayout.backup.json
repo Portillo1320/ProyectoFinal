@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\airam\\onedrive\\escritorio\\4cuatri\\proyectofinal\\proyectofinal\\controllers\\conductacontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\conductacontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\airam\\onedrive\\escritorio\\4cuatri\\proyectofinal\\proyectofinal\\data\\services\\actividadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\data\\services\\actividadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\airam\\onedrive\\escritorio\\4cuatri\\proyectofinal\\proyectofinal\\controllers\\alumnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\alumnocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\airam\\onedrive\\escritorio\\4cuatri\\proyectofinal\\proyectofinal\\controllers\\actividadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\controllers\\actividadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|c:\\users\\airam\\onedrive\\escritorio\\4cuatri\\proyectofinal\\proyectofinal\\data\\viewmodel\\actividadvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFBB05F8-BB99-4DC1-88CE-31FF2C6F881A}|ProyectoFinal\\ProyectoFinal.csproj|solutionrelative:proyectofinal\\data\\viewmodel\\actividadvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +31,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConductaController .cs",
-              "DocumentMoniker": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Controllers\\ConductaController .cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Controllers\\ConductaController .cs",
-              "ToolTip": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Controllers\\ConductaController .cs",
-              "RelativeToolTip": "ProyectoFinal\\Controllers\\ConductaController .cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAACQAAAAkAAAAAAAAAA==",
+              "Title": "ActividadService.cs",
+              "DocumentMoniker": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Data\\Services\\ActividadService.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Data\\Services\\ActividadService.cs",
+              "ToolTip": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Data\\Services\\ActividadService.cs",
+              "RelativeToolTip": "ProyectoFinal\\Data\\Services\\ActividadService.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T04:50:31.17Z",
+              "WhenOpened": "2024-12-06T15:03:10.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AlumnoController.cs",
-              "DocumentMoniker": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Controllers\\AlumnoController.cs",
-              "RelativeDocumentMoniker": "ProyectoFinal\\Controllers\\AlumnoController.cs",
-              "ToolTip": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Controllers\\AlumnoController.cs",
-              "RelativeToolTip": "ProyectoFinal\\Controllers\\AlumnoController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAACoAAAAIAAAAAAAAAA==",
+              "Title": "ActividadController.cs",
+              "DocumentMoniker": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Controllers\\ActividadController.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Controllers\\ActividadController.cs",
+              "ToolTip": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Controllers\\ActividadController.cs",
+              "RelativeToolTip": "ProyectoFinal\\Controllers\\ActividadController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwDQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T04:36:48.609Z"
+              "WhenOpened": "2024-12-06T15:03:08.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActividadVM.cs",
+              "DocumentMoniker": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Data\\ViewModel\\ActividadVM.cs",
+              "RelativeDocumentMoniker": "ProyectoFinal\\Data\\ViewModel\\ActividadVM.cs",
+              "ToolTip": "C:\\Users\\airam\\OneDrive\\Escritorio\\4CUATRI\\ProyectoFinal\\ProyectoFinal\\Data\\ViewModel\\ActividadVM.cs",
+              "RelativeToolTip": "ProyectoFinal\\Data\\ViewModel\\ActividadVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T15:02:11.214Z",
+              "EditorCaption": ""
             }
           ]
         }

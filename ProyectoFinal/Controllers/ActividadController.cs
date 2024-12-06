@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProyectoFinal.Data.Services;
 using ProyectoFinal.Data.ViewModel;
-
 
 namespace ProyectoFinal.Controllers
 {
@@ -16,11 +14,19 @@ namespace ProyectoFinal.Controllers
         {
             _actividadService = actividadService;
         }
+
         [HttpPost("add-actividad")]
         public IActionResult AddActividad([FromBody] ActividadVM actividad)
         {
             _actividadService.AddActividad(actividad);
             return Ok();
+        }
+
+        [HttpGet("get-all-actividad")]
+        public IActionResult GetAllAns()
+        {
+            var allactividad = _actividadService.GetAllAns();
+            return Ok(allactividad);
         }
 
         [HttpGet("get-actividad-with-alumno-by-id/{id}")]

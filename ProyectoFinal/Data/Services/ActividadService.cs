@@ -1,6 +1,9 @@
-﻿using ProyectoFinal.Data.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using ProyectoFinal.Data.Models;
+using ProyectoFinal.Data.Services;
 using ProyectoFinal.Data.ViewModel;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProyectoFinal.Data.Services
@@ -8,15 +11,29 @@ namespace ProyectoFinal.Data.Services
     public class ActividadService
     {
         private AppDbContext _context;
+
         public ActividadService(AppDbContext context)
         {
             _context = context;
-
         }
-        //Metodo para agregar un nuevo libro
+
+        // Método para listar todas las actividades con alumnos relacionados
+        public List<ActividadWithAlumnoVM> GetAllAns()
+        {
+            return _context.Actividads.Select(n => new ActividadWithAlumnoVM
+            {
+                Id = n.Id, 
+                Titulo = n.Titulo,
+                Descripcion = n.Descripcion,
+                Fecha = n.Fecha,
+                AlumnoName = n.Alumno_Actividads.Select(a => a.Alumno.Nombre).ToList()
+            }).ToList();
+        }
+
+        // Método para agregar una nueva actividad
         public void AddActividad(ActividadVM actividad)
         {
-            var _actividad = new Actividad()
+            var _actividad = new Actividad
             {
                 Titulo = actividad.Titulo,
                 Descripcion = actividad.Descripcion,
@@ -28,15 +45,20 @@ namespace ProyectoFinal.Data.Services
 
         public ActividadWithAlumnoVM GetActividadWithAlumno(int actividadId)
         {
-            var _actividad = _context.Actividads.Where(n => n.Id == actividadId).Select(n => new ActividadWithAlumnoVM()
-            {
-                Titulo = n.Titulo,
-                AlumnoName = n.Alumno_Actividads.Select(n => n.Alumno.Nombre).ToList()
-            }).FirstOrDefault();
-            return _actividad; 
+            var _actividad = _context.Actividads.Where(n => n.Id == actividadId)
+                .Select(n => new ActividadWithAlumnoVM
+                {
+                    Id = n.Id, 
+                    Titulo = n.Titulo,
+                    Descripcion = n.Descripcion,
+                    Fecha = n.Fecha,
+                    AlumnoName = n.Alumno_Actividads.Select(a => a.Alumno.Nombre).ToList()
+                }).FirstOrDefault();
+
+            return _actividad;
         }
 
-        //Metodo para modificar el actividad
+        // Método para modificar la actividad
         public Actividad UpdateActivivdadByID(int actividadid, ActividadVM actividad)
         {
             var _actividad = _context.Actividads.FirstOrDefault(n => n.Id == actividadid);
@@ -45,13 +67,12 @@ namespace ProyectoFinal.Data.Services
                 _actividad.Titulo = actividad.Titulo;
                 _actividad.Descripcion = actividad.Descripcion;
                 _actividad.Fecha = actividad.Fecha;
-
                 _context.SaveChanges();
             }
             return _actividad;
         }
 
-        //Metodo para eliminar el libre
+        // Método para eliminar la actividad
         public void DeleteActividadById(int actividadid)
         {
             var _actividad = _context.Actividads.FirstOrDefault(n => n.Id == actividadid);
@@ -63,3 +84,5 @@ namespace ProyectoFinal.Data.Services
         }
     }
 }
+
+

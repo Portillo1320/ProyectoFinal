@@ -23,6 +23,13 @@ namespace ProyectoFinal.Controllers
             return Ok();
         }
 
+        [HttpGet("get-all-conducta")]
+        public IActionResult GetAllAns()
+        {
+            var allconducta = _conductaService.GetAllAns();
+            return Ok(allconducta);
+        }
+
         [HttpGet("get-conducta-with-alumno-by-id/{id}")]
         public IActionResult GetConductaWithAlumno(int id)
         {

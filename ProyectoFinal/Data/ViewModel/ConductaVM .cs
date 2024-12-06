@@ -10,9 +10,13 @@ namespace ProyectoFinal.Data.ViewModel
         public DateTime Fecha { get; set; }
     }
 
-    public class ConductaWithAlumnoVM
-    {
-        public string CalificacionConducta { get; set; }
-        public List<string> AlumnoName { get; set; }
-    }
+    
+        public class ConductaWithAlumnoVM
+        {
+            public string Observaciones { get; set; }
+            public string CalificacionConducta { get; set; }
+            public DateTime Fecha { get; set; }
+            public List<string> AlumnoName { get; set; }
+        }
+
 }

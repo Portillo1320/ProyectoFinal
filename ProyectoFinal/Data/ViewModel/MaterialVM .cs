@@ -11,6 +11,7 @@ namespace ProyectoFinal.Data.ViewModel
     public class MaterialWithAlumnoVM
     {
         public string Nombre { get; set; }
+        public string Descripcion { get; set; }
         public List<string> AlumnoName { get; set; }
     }
 }

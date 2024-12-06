@@ -9,28 +9,27 @@ namespace ProyectoFinal.Data.Services
     public class AlumnoService
     {
         private AppDbContext _context;
+
         public AlumnoService(AppDbContext context)
         {
             _context = context;
-
         }
-        //Metodo para agregar un nuevo libro
+
+        // Método para agregar un nuevo Alumno con clases
         public void AddAlumnoWithClass(AlumnoVM alumno)
         {
-            var _alumno = new Alumno()
+            var _alumno = new Alumno
             {
                 Nombre = alumno.Nombre,
                 Apellido = alumno.Apellido,
                 FecNac = alumno.FecNac
-
             };
             _context.Alumnos.Add(_alumno);
             _context.SaveChanges();
 
-
             foreach (var id in alumno.ActividadIDs)
             {
-                var _alumno_actividad = new Alumno_Actividad()
+                var _alumno_actividad = new Alumno_Actividad
                 {
                     AlumnoId = _alumno.id,
                     ActividadId = id
@@ -41,7 +40,7 @@ namespace ProyectoFinal.Data.Services
 
             foreach (var id in alumno.MaterialIDs)
             {
-                var _alumno_material = new Alumno_Material()
+                var _alumno_material = new Alumno_Material
                 {
                     AlumnoId = _alumno.id,
                     MaterialId = id
@@ -49,9 +48,10 @@ namespace ProyectoFinal.Data.Services
                 _context.Alumno_Materials.Add(_alumno_material);
                 _context.SaveChanges();
             }
+
             foreach (var id in alumno.ConductaIDs)
             {
-                var _alumno_conducta = new Alumno_Conducta()
+                var _alumno_conducta = new Alumno_Conducta
                 {
                     AlumnoId = _alumno.id,
                     ConductaId = id
@@ -61,41 +61,53 @@ namespace ProyectoFinal.Data.Services
             }
         }
 
-        //Metodo para listar todos los libros
-        public List<Alumno> GetAllAns() => _context.Alumnos.ToList();
-        //Metodo para obtener el libro por id
-        public AlumnoWithClassVM GetAlumnoById(int alumnoid)
+        // Método para listar todos los alumnos sin actividades, materiales y conductas
+        public List<AlumnoVM> GetAllSimpleAlumnos()
         {
-            var _alumnoWithClass = _context.Alumnos.Where(n => n.id == alumnoid).Select(alumno => new AlumnoWithClassVM()
+            return _context.Alumnos.Select(n => new AlumnoVM
             {
-                Nombre = alumno.Nombre,
-                Apellido = alumno.Apellido,
-                ActividadNames = alumno.Alumno_Actividads.Select(n => n.Actividad.Titulo).ToList(),
-                MaterialNames = alumno.Alumno_Materials.Select(n => n.Material.Nombre).ToList(),
-                ConductaNames = alumno.Alumno_Conductas.Select(n => n.Conducta.CalificacionConducta).ToList()
+                Id = n.id,
+                Nombre = n.Nombre,
+                Apellido = n.Apellido,
+                FecNac = n.FecNac ?? DateTime.MinValue 
+            }).ToList();
+        }
 
-            }).FirstOrDefault();
+        // Método para obtener un alumno por ID con todas las relaciones
+        public AlumnoWithClassVM GetAlumnoById(int alumnoId)
+        {
+            var _alumnoWithClass = _context.Alumnos.Where(n => n.id == alumnoId)
+                .Select(alumno => new AlumnoWithClassVM
+                {
+                    Id = alumno.id,
+                    Nombre = alumno.Nombre,
+                    Apellido = alumno.Apellido,
+                    ActividadNames = alumno.Alumno_Actividads.Select(n => n.Actividad.Titulo).ToList(),
+                    MaterialNames = alumno.Alumno_Materials.Select(n => n.Material.Nombre).ToList(),
+                    ConductaNames = alumno.Alumno_Conductas.Select(n => n.Conducta.CalificacionConducta).ToList()
+                }).FirstOrDefault();
+
             return _alumnoWithClass;
         }
 
-        //Metodo para modificar el alumno
-        public Alumno UpdateAlumnoByID(int alumnoid, AlumnoVM alumno)
+        // Método para modificar un alumno por ID
+        public Alumno UpdateAlumnoByID(int alumnoId, AlumnoVM alumno)
         {
-            var _alumno = _context.Alumnos.FirstOrDefault(n => n.id == alumnoid);
+            var _alumno = _context.Alumnos.FirstOrDefault(n => n.id == alumnoId);
             if (_alumno != null)
             {
                 _alumno.Nombre = alumno.Nombre;
                 _alumno.Apellido = alumno.Apellido;
                 _alumno.FecNac = alumno.FecNac;
-
                 _context.SaveChanges();
             }
             return _alumno;
         }
-        //Metodo para eliminar el alumno
-        public void DeleteAlumnoById(int alumnoid)
+
+        // Método para eliminar un alumno por ID
+        public void DeleteAlumnoById(int alumnoId)
         {
-            var _alumno = _context.Alumnos.FirstOrDefault(n => n.id == alumnoid);
+            var _alumno = _context.Alumnos.FirstOrDefault(n => n.id == alumnoId);
             if (_alumno != null)
             {
                 _context.Alumnos.Remove(_alumno);
@@ -104,3 +116,6 @@ namespace ProyectoFinal.Data.Services
         }
     }
 }
+
+
+
